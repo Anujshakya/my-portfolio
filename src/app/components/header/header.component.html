@@ -1,0 +1,39 @@
+<div class="relative">
+  <div class="navbar glassy-navbar absolute top-0 left-0 w-full z-50">
+    <div class="navbar-start">
+      <ul class="menu menu-horizontal flex flex-nowrap items-baseline">
+        <li>
+          <a class="avatar"
+             [routerLink]="['/home']">
+            <div class="w-8 rounded-full">
+              <img ngSrc="./assets/images/pacman.webp"
+                   alt="Image"
+                   height="800"
+                   width="800"/>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="'work'">
+            Work
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="'blogs'">
+            Blogs
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="'projects'">
+            Projects
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-end">
+      <app-theme-toggler>
+      </app-theme-toggler>
+    </div>
+  </div>
+</div>
+
