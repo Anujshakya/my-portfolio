@@ -1,0 +1,15 @@
+.glassy-navbar {
+  background: rgba(255, 255, 255, 0.15); /* translucent light */
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.dark .glassy-navbar {
+  background: rgba(17, 25, 40, 0.35); /* darker translucent */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}

@@ -1,11 +1,15 @@
-<main class="main">
-  <div class="px-8 py-4">
-    <!--    TODO: Create Header Component and move this in header component. Make necessary dynamic variables as well-->
-    <app-theme-toggler>
-    </app-theme-toggler>
+<main class="min-h-screen flex flex-col items-center">
+  <div class="w-full max-w-3xl flex flex-col flex-1 px-4 py-4">
+    <header class="mb-20">
+      <app-header></app-header>
+    </header>
+
+    <section id="main-content" class="flex-1">
+      <router-outlet></router-outlet>
+    </section>
+
+    <footer class="mt-auto text-center">
+      <app-footer></app-footer>
+    </footer>
   </div>
 </main>
-
-<div class="px-8 py-4">
-  <router-outlet/>
-</div>
