@@ -1,0 +1,10 @@
+<button
+  class="btn btn-circle btn-outline transition duration-300"
+  (click)="toggleTheme()"
+  aria-label="Toggle theme"
+>
+  <lucide-icon
+    [name]="currentTheme === 'light' ? 'Moon' : 'Sun'"
+    class="w-6 h-6 transition-transform duration-500 ease-in-out"
+  ></lucide-icon>
+</button>
