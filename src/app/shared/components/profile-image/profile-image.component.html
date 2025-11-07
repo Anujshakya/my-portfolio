@@ -1,0 +1,12 @@
+<div [ngClass]="containerClasses" class="group">
+  <div [ngClass]="backgroundClasses"></div>
+
+  <img
+    [ngSrc]="imageUrl"
+    [alt]="alt"
+    (error)="onImageError($event)"
+    width="800"
+    height="800"
+    class="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 object-contain w-[85%] h-auto transition-transform duration-500 ease-out group-hover:scale-125"
+  />
+</div>

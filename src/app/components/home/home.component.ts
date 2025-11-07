@@ -2,10 +2,13 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {PostService} from '../../services';
 import {Subscription} from 'rxjs';
 import {PostModel} from '../../models';
+import {ProfileImageComponent} from '../../shared/components/profile-image/profile-image.component';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [
+    ProfileImageComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
