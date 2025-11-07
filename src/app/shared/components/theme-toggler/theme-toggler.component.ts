@@ -24,6 +24,13 @@ export class ThemeTogglerComponent implements OnInit {
   toggleTheme(): void {
     this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', this.currentTheme);
+
+    if (this.currentTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
     localStorage.setItem(this.CURRENT_THEME, this.currentTheme);
   }
 }

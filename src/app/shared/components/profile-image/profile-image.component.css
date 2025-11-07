@@ -1,0 +1,38 @@
+:host {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Enhanced glass effect with bright colors */
+:host .backdrop-blur-xl {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+/* Background subtle zoom on hover */
+:host:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+/* Image stays at bottom while zooming */
+:host:hover img {
+  transform: translateX(-50%) scale(1.25);
+  transform-origin: center bottom;
+}
+
+/* Additional glow effect on hover - theme aware */
+:host:hover {
+  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
+}
+
+:host-context(.dark):hover {
+  filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.5));
+}
+
+/* Ensure image always stays at bottom */
+img {
+  transform-origin: center bottom;
+}

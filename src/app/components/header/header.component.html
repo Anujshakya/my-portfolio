@@ -3,15 +3,10 @@
     <div class="navbar-start">
       <ul class="menu menu-horizontal flex flex-nowrap items-baseline">
         <li>
-          <a class="avatar"
-             [routerLink]="['/home']">
-            <div class="w-8 rounded-full">
-              <img ngSrc="./assets/images/pacman.webp"
-                   alt="Image"
-                   height="800"
-                   width="800"/>
-            </div>
-          </a>
+          <div [routerLink]="['/home']">
+            <app-profile-image>
+            </app-profile-image>
+          </div>
         </li>
         <li>
           <a [routerLink]="'work'">
