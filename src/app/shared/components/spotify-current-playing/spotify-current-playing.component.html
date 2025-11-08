@@ -4,7 +4,8 @@
     <img alt="Album cover"
          width="60"
          height="60"
-         class="opacity-90 rounded-md shadow-lg"
+         class="bg-transparent opacity-90 rounded-md"
+         [ngClass]="{ 'shadow-lg': isPlaying }"
          [ngSrc]="isPlaying ? albumImageUrl : spotifyImageUrl">
 
     @if (isPlaying) {

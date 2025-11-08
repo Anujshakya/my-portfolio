@@ -2,12 +2,13 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription, timer} from 'rxjs';
 import {SpotifyService} from '../../../services';
 import {IMAGE_URLS} from '../../constants';
-import {NgOptimizedImage} from '@angular/common';
+import {NgClass, NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-spotify-current-playing',
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    NgClass
   ],
   templateUrl: './spotify-current-playing.component.html',
   styleUrl: './spotify-current-playing.component.css',
