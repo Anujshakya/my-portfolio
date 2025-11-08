@@ -12,7 +12,7 @@ import {routes} from './app.routes';
 import {AuthInterceptorService, SERVICES} from './services';
 import {HTTP_INTERCEPTORS, provideHttpClient} from '@angular/common/http';
 import {AppUrlConfig} from './app.url.config';
-import {LucideAngularModule, Moon, Sun} from 'lucide-angular';
+import {LucideAngularModule, Mail, Moon, Sun, Github, Instagram, Linkedin} from 'lucide-angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -30,6 +30,17 @@ export const appConfig: ApplicationConfig = {
       useClass: AuthInterceptorService,
       multi: true,
     },
-    importProvidersFrom(LucideAngularModule.pick({Sun, Moon})),
+    importProvidersFrom(
+      LucideAngularModule.pick(
+        {
+          Sun,
+          Moon,
+          Linkedin,
+          Github,
+          Instagram,
+          Mail,
+        }
+      )
+    ),
   ]
 };

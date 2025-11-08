@@ -1,0 +1,35 @@
+<app-profile-image
+  size="w-32 h-32"
+  rounded="rounded-lg">
+</app-profile-image>
+
+<div class="mt-8">
+  <h1
+    class="text-3xl font-bold opacity-80">
+    Hi, I'm Anuj —
+    <span class="text-gray-500 dark:text-gray-400">Smth Kooooooooooool.</span>
+  </h1>
+  <div
+    class="mt-4 w-3/4 flex flex-wrap opacity-90 items-center text-justify gap-y-2 text-base md:text-lg text-slate-500 dark:text-slate-400">
+    I’m a Full-Stack Software Engineer from Nepal, passionate about creating dynamic and efficient web applications that
+    deliver great user experiences.
+  </div>
+</div>
+
+<div class="mt-8 flex">
+  @for (socialLink of SOCIAL_LINKS; track socialLink.name) {
+    <a [href]="socialLink.url"
+       target="_blank"
+       class="p-2 rounded-full hover:bg-base-200 hover:text-cyan-400 hover:dark:text-purple-500 transition-transform duration-200 hover:scale-110">
+      <lucide-icon
+        [name]="socialLink.lucidIcon"
+        class="w-5 h-5 sm:w-6 sm:h-6">
+      </lucide-icon>
+    </a>
+  }
+</div>
+
+<div class="mt-8">
+  <app-spotify-current-playing>
+  </app-spotify-current-playing>
+</div>
