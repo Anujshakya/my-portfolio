@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Config settings
+/src/app/shared/spotify-constants.ts
