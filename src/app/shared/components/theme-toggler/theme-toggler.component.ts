@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {APP_CONSTANTS} from '../../constants';
-import {LucideAngularModule} from 'lucide-angular';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-theme-toggler',
   imports: [
-    LucideAngularModule
+    NgClass
   ],
   templateUrl: './theme-toggler.component.html',
   styleUrl: './theme-toggler.component.css',

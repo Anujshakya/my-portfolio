@@ -1,0 +1,54 @@
+@if (experiences) {
+  <h1 class="text-3xl font-bold opacity-80 text-gray-500 dark:text-gray-400">
+    <span class="inline-block transition-transform duration-200 hover:scale-110">
+      <span class="text-cyan-200 dark:text-purple-500 ">/</span> Experiences
+    </span>
+  </h1>
+
+  <ul class="list bg-base-200 rounded-box shadow-md mt-4 px-3">
+    <li class="p-4 pb-2 opacity-60 tracking-wide text-lg">My Experiences</li>
+
+    @for (experience of experiences; track experience.id) {
+      <li class="list-row hover:scale-105">
+        <div class="text-2xl font-thin opacity-30 tabular-nums">
+          {{ experience.id | number:'2.0' }}
+        </div>
+        <a [href]="experience.url"
+           target="_blank">
+          <img class="size-10 rounded-box transition-transform duration-200 hover:scale-110"
+               [ngSrc]="experience.logoUrl"
+               [alt]="experience.companyName"
+               width="80"
+               height="80"/>
+        </a>
+        <div class="list-col-grow ms-2 space-y-1.5">
+          <div class="font-bold">
+            {{ experience.role }}
+          </div>
+          <div>
+            <a
+              class="text-xs uppercase font-semibold opacity-60 hover:text-cyan-700 dark:hover:text-purple-500"
+              [href]="experience.url"
+              target="_blank">
+              {{ experience.companyName }}
+            </a>
+          </div>
+          <div class="text-xs uppercase font-semibold opacity-60 sm:hidden">
+            {{ experience.startDate | date: 'MMMM yyyy' }}
+            - {{ experience.endDate ? (experience.endDate | date: 'MMMM yyyy') : 'Present' }}
+          </div>
+        </div>
+        <div class="text-xs uppercase font-semibold opacity-60 hidden sm:block">
+          {{ experience.startDate | date: 'MMMM yyyy' }}
+          - {{ experience.endDate ? (experience.endDate | date: 'MMMM yyyy') : 'Present' }}
+        </div>
+      </li>
+    }
+  </ul>
+
+  <div class="flex justify-center items-center mt-4">
+    <button class="btn btn-primary px-2" [routerLink]="'/work'">
+      View Details
+    </button>
+  </div>
+}

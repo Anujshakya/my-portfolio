@@ -3,11 +3,13 @@ import {PostService} from '../../services';
 import {Subscription} from 'rxjs';
 import {PostModel} from '../../models';
 import {IntroComponent} from './intro/intro.component';
+import {ExperienceSummaryComponent} from './experience-summary/experience-summary.component';
 
 @Component({
   selector: 'app-home',
   imports: [
-    IntroComponent
+    IntroComponent,
+    ExperienceSummaryComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -23,7 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.loadData();
+    // this.loadData();
   }
 
   ngOnDestroy() {
