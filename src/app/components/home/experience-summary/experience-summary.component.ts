@@ -30,6 +30,12 @@ export class ExperienceSummaryComponent implements OnInit, OnDestroy {
     this.loadData();
   }
 
+  ngOnDestroy() {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
+  }
+
   private loadData(): void {
     this.sub.add(
       this._experienceService.getExperience().subscribe(
@@ -38,11 +44,5 @@ export class ExperienceSummaryComponent implements OnInit, OnDestroy {
         }
       )
     )
-  }
-
-  ngOnDestroy() {
-    if (this.sub) {
-      this.sub.unsubscribe();
-    }
   }
 }

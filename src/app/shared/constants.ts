@@ -23,7 +23,13 @@ export const APP_CONSTANTS = {
       url: 'https://www.instagram.com/anuj_shakya_',
       lucidIcon: 'instagram',
     },
-  ]
+  ],
+  projectStatus: {
+    COMPLETED: 'Completed',
+    PENDING: 'Pending',
+    IN_PROGRESS: 'In Progress',
+    ON_HOLD: 'On Hold'
+  },
 }
 
 export const IMAGE_URLS = {

@@ -4,12 +4,14 @@ import {Subscription} from 'rxjs';
 import {PostModel} from '../../models';
 import {IntroComponent} from './intro/intro.component';
 import {ExperienceSummaryComponent} from './experience-summary/experience-summary.component';
+import {ProjectSummaryComponent} from './project-summary/project-summary.component';
 
 @Component({
   selector: 'app-home',
   imports: [
     IntroComponent,
-    ExperienceSummaryComponent
+    ExperienceSummaryComponent,
+    ProjectSummaryComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
