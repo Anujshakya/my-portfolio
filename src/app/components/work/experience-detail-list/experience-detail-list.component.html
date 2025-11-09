@@ -1,1 +1,91 @@
-<p>experience-detail-list.component works!</p>
+@if (experiences.length) {
+  <h1 class="text-3xl font-bold opacity-80 text-gray-500 dark:text-gray-400">
+    <span class="inline-block transition-transform duration-200 hover:scale-110">
+      <span class="text-cyan-200 dark:text-purple-500 ">/</span> Work Experiences
+    </span>
+  </h1>
+  <p class="mt-4 opacity-90 text-base md:text-md text-slate-500 dark:text-slate-400 ">
+    My work experiences so far.
+  </p>
+
+  <hr class="my-8"/>
+
+  <p class="text-2xl mb-8 font-bold opacity-80 text-gray-500 dark:text-gray-400">
+    All Experiences <span class="text-sm font-light">({{ experiences.length }} experiences)</span>
+  </p>
+
+  @for (experience of experiences; track experience.id) {
+    <div class="mt-4 rounded-box shadow-md">
+      <div class="collapse bg-base-200">
+        <input type="radio"
+               name="experience-{{experience.id}}"
+               [checked]="selectedId == experience.id"
+               (change)="selectedId = experience.id"/>
+        <div class="collapse-title flex">
+          <a [href]="experience.url"
+             target="_blank">
+            <img class="size-10 rounded-box transition-transform duration-200 hover:scale-110"
+                 [ngSrc]="experience.logoUrl"
+                 [alt]="experience.companyName"
+                 width="80"
+                 height="80"/>
+          </a>
+          <div class="list-col-grow ms-2">
+            <div class="font-bold">
+              {{ experience.role }}
+            </div>
+            <div>
+              <a
+                class="text-xs uppercase font-semibold opacity-60 hover:text-cyan-700 dark:hover:text-purple-500"
+                [href]="experience.url"
+                target="_blank">
+                {{ experience.companyName }} ({{ experience.location }})
+              </a>
+            </div>
+            <div class="text-xs uppercase font-semibold opacity-60 sm:hidden">
+              {{ experience.startDate | date: 'MMMM yyyy' }}
+              - {{ experience.endDate ? (experience.endDate | date: 'MMMM yyyy') : 'Present' }}
+            </div>
+          </div>
+          <div class="text-xs uppercase font-semibold ms-auto opacity-60 hidden sm:block">
+            {{ experience.startDate | date: 'MMMM yyyy' }}
+            - {{ experience.endDate ? (experience.endDate | date: 'MMMM yyyy') : 'Present' }}
+          </div>
+        </div>
+        <div class="collapse-content text-sm">
+          <div class="flex flex-wrap gap-2 mb-4">
+            @for (skill of experience.keySkills; track $index) {
+              <a
+                class="badge border border-dashed border-accent dark:border-primary text-xs items-center gap-1 px-2 py-[0.7rem] hover:scale-105 transition-transform duration-200"
+                [href]="skill.url"
+                target="_blank">
+                <img [ngSrc]="skillImageUrl(skill.name)"
+                     [alt]="skill.name"
+                     class="w-5 h-5"
+                     width="20"
+                     height="20">
+                <span class="leading-none">
+                  {{ skill.name }}
+                </span>
+              </a>
+            }
+          </div>
+
+          <ul class="space-y-2">
+            @for (keypoint of experience.summary; track $index) {
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-400 dark:text-purple-400 mt-1">•</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">
+                  {{ keypoint }}
+                </span>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  }
+} @else {
+  <app-empty-page>
+  </app-empty-page>
+}
