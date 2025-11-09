@@ -4,6 +4,7 @@ import {ExperienceModel} from '../../../models';
 import {ExperienceService} from '../../../services/experience.service';
 import {EmptyPageComponent} from '../../../shared/components/empty-page/empty-page.component';
 import {DatePipe, NgOptimizedImage} from '@angular/common';
+import {skillImageUrl} from '../../../shared';
 
 @Component({
   selector: 'app-experience-detail-list',
@@ -20,6 +21,8 @@ export class ExperienceDetailListComponent implements OnInit, OnDestroy {
 
   experiences: ExperienceModel[] = [];
   selectedId: number = 1;
+
+  skillImageUrl = skillImageUrl;
 
   constructor(
     private _experienceService: ExperienceService,
@@ -44,9 +47,5 @@ export class ExperienceDetailListComponent implements OnInit, OnDestroy {
         }
       )
     )
-  }
-
-  skillImageUrl(skillName: string): string {
-    return `./assets/images/icons/${skillName.toLowerCase()}.png`;
   }
 }

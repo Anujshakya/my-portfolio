@@ -1,0 +1,45 @@
+<div
+  class="card bg-base-200 shadow-md hover:shadow-x rounded-xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:scale-[1.02]">
+  <figure class="overflow-hidden">
+    <img
+      [ngSrc]="project.imageUrl"
+      [alt]="project.title"
+      width="200"
+      height="200"
+      class="w-full h-64 object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+    />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title uppercase font-semibold">
+      {{ project.title }}
+      <div class="badge text-xs truncate"
+           [ngClass]="getProjectStatusBadgeColor(project.status)">
+        {{ project.status }}
+      </div>
+    </h2>
+
+    <p class="opacity-80 leading-relaxed line-clamp-4 min-h-[6rem]">
+      {{ project.description || ' ' }}
+    </p>
+
+    <div class="mt-4">
+      <div class="flex flex-wrap gap-2">
+        @for (skill of project.keySkills; track $index) {
+          <a
+            class="badge border border-dashed border-accent dark:border-primary text-xs items-center gap-1 px-2 py-[0.7rem] hover:scale-105 transition-transform duration-200"
+            [href]="skill.url"
+            target="_blank">
+            <img [ngSrc]="skillImageUrl(skill.name)"
+                 [alt]="skill.name"
+                 class="w-5 h-5"
+                 width="20"
+                 height="20">
+            <span class="leading-none">
+                  {{ skill.name }}
+                </span>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</div>
