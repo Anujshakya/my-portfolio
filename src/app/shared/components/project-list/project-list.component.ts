@@ -12,4 +12,6 @@ import {ProjectListCardComponent} from './project-list-card/project-list-card.co
 })
 export class ProjectListComponent {
   @Input() projects: ProjectModel[] = [];
+  @Input() displayAllProjects : boolean = true;
+  @Input() visibleProjectCount : number = 0;
 }

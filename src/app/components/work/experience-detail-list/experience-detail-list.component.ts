@@ -2,14 +2,12 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {ExperienceModel} from '../../../models';
 import {ExperienceService} from '../../../services/experience.service';
-import {EmptyPageComponent} from '../../../shared/components/empty-page/empty-page.component';
 import {DatePipe, NgOptimizedImage} from '@angular/common';
 import {skillImageUrl} from '../../../shared';
 
 @Component({
   selector: 'app-experience-detail-list',
   imports: [
-    EmptyPageComponent,
     DatePipe,
     NgOptimizedImage
   ],

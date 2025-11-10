@@ -18,6 +18,30 @@
       </div>
     </h2>
 
+    <div class="flex gap-2 mb-2 h-7">
+      @if (project.repoLink) {
+        <a [href]="project.repoLink"
+           target="_blank"
+           class="p-1 rounded-full border hover:border-cyan-400 hover:dark:border-purple-500 hover:bg-base-200 hover:text-cyan-400 hover:dark:text-purple-500 transition-transform duration-200 hover:scale-110">
+          <lucide-icon
+            [name]="'github'"
+            class="w-4 h-4">
+          </lucide-icon>
+        </a>
+      }
+
+      @if (project.webLink) {
+        <a [href]="project.webLink"
+           target="_blank"
+           class="p-1 rounded-full border hover:border-cyan-400 hover:dark:border-purple-500 hover:bg-base-200 hover:text-cyan-400 hover:dark:text-purple-500 transition-transform duration-200 hover:scale-110">
+          <lucide-icon
+            [name]="'globe'"
+            class="w-4 h-4">
+          </lucide-icon>
+        </a>
+      }
+    </div>
+
     <p class="opacity-80 leading-relaxed line-clamp-4 min-h-[6rem]">
       {{ project.description || ' ' }}
     </p>
