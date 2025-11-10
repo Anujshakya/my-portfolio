@@ -7,7 +7,15 @@
 
   <div class="mt-4">
     <app-project-list
-      [projects]="projects">
+      [projects]="projects"
+      [displayAllProjects]="false"
+      [visibleProjectCount]="2">
     </app-project-list>
+  </div>
+
+  <div class="flex justify-center items-center mt-4">
+    <button class="btn btn-primary px-2" [routerLink]="'/projects'">
+      View All Projects
+    </button>
   </div>
 }

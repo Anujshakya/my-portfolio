@@ -12,7 +12,7 @@ import {routes} from './app.routes';
 import {AuthInterceptorService, SERVICES} from './services';
 import {HTTP_INTERCEPTORS, provideHttpClient} from '@angular/common/http';
 import {AppUrlConfig} from './app.url.config';
-import {LucideAngularModule, Mail, Moon, Sun, Github, Instagram, Linkedin} from 'lucide-angular';
+import {LucideAngularModule, Mail, Moon, Sun, Github, Instagram, Linkedin, Globe} from 'lucide-angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -39,6 +39,7 @@ export const appConfig: ApplicationConfig = {
           Github,
           Instagram,
           Mail,
+          Globe,
         }
       )
     ),

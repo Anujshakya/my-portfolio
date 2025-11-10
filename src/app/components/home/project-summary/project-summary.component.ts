@@ -3,11 +3,13 @@ import {Subscription} from 'rxjs';
 import {ProjectModel} from '../../../models';
 import {ProjectService} from '../../../services/project.service';
 import {ProjectListComponent} from '../../../shared/components/project-list/project-list.component';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-project-summary',
   imports: [
-    ProjectListComponent
+    ProjectListComponent,
+    RouterLink
   ],
   templateUrl: './project-summary.component.html',
   styleUrl: './project-summary.component.css',
