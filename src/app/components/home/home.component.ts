@@ -5,13 +5,17 @@ import {PostModel} from '../../models';
 import {IntroComponent} from './intro/intro.component';
 import {ExperienceSummaryComponent} from './experience-summary/experience-summary.component';
 import {ProjectSummaryComponent} from './project-summary/project-summary.component';
+import {AboutMe} from './about-me/about-me';
+import {GithubActivity} from './github-activity/github-activity';
 
 @Component({
   selector: 'app-home',
   imports: [
     IntroComponent,
     ExperienceSummaryComponent,
-    ProjectSummaryComponent
+    ProjectSummaryComponent,
+    AboutMe,
+    GithubActivity
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

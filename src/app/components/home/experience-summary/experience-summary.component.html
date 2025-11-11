@@ -47,8 +47,11 @@
   </ul>
 
   <div class="flex justify-center items-center mt-4">
-    <button class="btn btn-primary px-2" [routerLink]="'/work'">
+    <button [class]="STYLE_CONSTANTS.btnGlassTheme"
+            [routerLink]="'/work'">
+    <span class="flex items-center gap-2">
       View Details
+    </span>
     </button>
   </div>
 }

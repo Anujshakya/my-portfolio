@@ -1,0 +1,46 @@
+<h1 class="text-3xl font-bold opacity-80 text-gray-500 dark:text-gray-400">
+    <span class="inline-block transition-transform duration-200 hover:scale-110">
+      <span class="text-cyan-200 dark:text-purple-500 ">/</span> About Me
+    </span>
+</h1>
+
+<div class="mt-4">
+  <div class="mt-8 flex flex-col gap-6 md:flex-row">
+    <app-profile-image
+      [imageUrl]="aboutMeData.image_url || IMAGE_URLS.profile"
+      size="w-64 h-64"
+      rounded="rounded-lg">
+    </app-profile-image>
+
+    <div>
+      <h1 class="text-2xl font-bold opacity-80">
+        {{ aboutMeData.name }}
+      </h1>
+
+      <p class="mt-4 opacity-90 text-sm md:text-base text-slate-500 dark:text-slate-400">
+        {{ aboutMeData.description }}
+      </p>
+
+      <div>
+        <h5 class="mt-4 font-bold opacity-80 text-sm md:text-base">
+          Skills
+        </h5>
+
+        <div class="mt-2 flex gap-2">
+          @for (skill of aboutMeData.skills; track $index) {
+            <a [href]="skill.url"
+               target="_blank"
+               [title]="skill.name"
+               class="p-1 rounded-lg transition-transform duration-200 hover:scale-110  bg-white/5 backdrop-blur-sm hover:bg-white/20">
+              <img [ngSrc]="skillImageUrl(skill.name)"
+                   [alt]="skill.name"
+                   class="w-5 h-5"
+                   width="20"
+                   height="20">
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
