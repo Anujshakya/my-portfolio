@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  button.btn {
+    background-color: var(--btn-color, initial) !important;
+  }
+}
 
 html {
   transition: background-color 0.4s ease, color 0.4s ease, filter 0.3s ease;

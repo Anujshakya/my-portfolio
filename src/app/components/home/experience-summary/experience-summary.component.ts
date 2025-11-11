@@ -4,6 +4,7 @@ import {ExperienceModel} from '../../../models';
 import {ExperienceService} from '../../../services/experience.service';
 import {DatePipe, DecimalPipe, NgOptimizedImage} from '@angular/common';
 import {RouterLink} from '@angular/router';
+import {STYLE_CONSTANTS} from '../../../shared';
 
 @Component({
   selector: 'app-experience-summary',
@@ -20,6 +21,8 @@ export class ExperienceSummaryComponent implements OnInit, OnDestroy {
   private sub: Subscription = new Subscription();
 
   experiences: ExperienceModel[] = [];
+
+  STYLE_CONSTANTS = STYLE_CONSTANTS;
 
   constructor(
     private _experienceService: ExperienceService,

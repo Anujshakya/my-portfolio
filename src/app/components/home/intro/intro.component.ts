@@ -1,10 +1,7 @@
 import {Component} from '@angular/core';
-import {ProfileImageComponent} from '../../../shared/components/profile-image/profile-image.component';
+import {ProfileImageComponent, SpotifyCurrentPlayingComponent} from '../../../shared';
 import {LucideAngularModule} from 'lucide-angular';
 import {APP_CONSTANTS} from '../../../shared';
-import {
-  SpotifyCurrentPlayingComponent
-} from '../../../shared/components/spotify-current-playing/spotify-current-playing.component';
 
 @Component({
   selector: 'app-intro',
@@ -18,5 +15,4 @@ import {
 })
 export class IntroComponent {
   SOCIAL_LINKS = APP_CONSTANTS.socialLinks;
-
 }

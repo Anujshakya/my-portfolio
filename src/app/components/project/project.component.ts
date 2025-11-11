@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ProjectListComponent} from '../../shared/components/project-list/project-list.component';
+import {ProjectListComponent} from '../../shared';
 import {Subscription} from 'rxjs';
 import {ProjectModel} from '../../models';
 import {ProjectService} from '../../services/project.service';

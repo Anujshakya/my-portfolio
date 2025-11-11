@@ -2,8 +2,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {ProjectModel} from '../../../models';
 import {ProjectService} from '../../../services/project.service';
-import {ProjectListComponent} from '../../../shared/components/project-list/project-list.component';
+import {ProjectListComponent} from '../../../shared';
 import {RouterLink} from '@angular/router';
+import {STYLE_CONSTANTS} from '../../../shared';
 
 @Component({
   selector: 'app-project-summary',
@@ -18,6 +19,8 @@ export class ProjectSummaryComponent implements OnInit, OnDestroy {
   private sub: Subscription = new Subscription();
 
   projects: ProjectModel[] = [];
+
+  STYLE_CONSTANTS = STYLE_CONSTANTS;
 
   constructor(
     private _projectService: ProjectService,

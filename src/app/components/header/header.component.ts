@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import {ThemeTogglerComponent} from '../../shared/components/theme-toggler/theme-toggler.component';
+import {Component} from '@angular/core';
+import {ThemeTogglerComponent, ProfileImageComponent} from '../../shared';
 import {RouterLink} from '@angular/router';
-import {ProfileImageComponent} from '../../shared/components/profile-image/profile-image.component';
 
 @Component({
   selector: 'app-header',
