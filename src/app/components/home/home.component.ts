@@ -6,7 +6,6 @@ import {IntroComponent} from './intro/intro.component';
 import {ExperienceSummaryComponent} from './experience-summary/experience-summary.component';
 import {ProjectSummaryComponent} from './project-summary/project-summary.component';
 import {AboutMe} from './about-me/about-me';
-import {GithubActivity} from './github-activity/github-activity';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +14,6 @@ import {GithubActivity} from './github-activity/github-activity';
     ExperienceSummaryComponent,
     ProjectSummaryComponent,
     AboutMe,
-    GithubActivity
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
