@@ -1,1 +1,11 @@
-<p>blog.component works!</p>
+<div class="mt-20">
+  @if (!isLoading && hasNoBlogs()) {
+    <app-empty-page>
+    </app-empty-page>
+  }
+
+  @if (!isLoading && !hasNoBlogs()) {
+    <!--  Show Blogs-->
+  }
+</div>
+

@@ -1,1 +1,25 @@
-<p>empty-page.component works!</p>
+<div class="flex flex-col min-h-[60vh] justify-center items-center text-center">
+  <img
+    [ngSrc]="EMPTY_PAGE_IMAGE_LIGHT"
+    alt="Not Found"
+    class="w-72 h-72 mb-6 block dark:hidden"
+    width="200"
+    height="200"
+  />
+
+  <img
+    [ngSrc]="EMPTY_PAGE_IMAGE_DARK"
+    alt="Not Found"
+    class="w-72 h-72 mb-6 hidden dark:block"
+    width="200"
+    height="200"
+  />
+
+  <p class=" text-gray-500 dark:text-gray-400 text-2xl font-semibold">
+    Nothing to show...
+  </p>
+
+  <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">
+    Hope you check back later hehehehehhehehehe
+  </p>
+</div>
