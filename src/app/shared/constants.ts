@@ -36,7 +36,7 @@ export const IMAGE_URLS = {
   profile: './assets/images/101pp.png',
   spotify: './assets/images/spotify.svg',
   emptyPageLight: './assets/images/empty-light.png',
-  emptyPageDark: './assets/images/empty-dark.png',
+  emptyPageDark: './assets/images/empty-dark-3.png',
   notFoundPageLight: './assets/images/not-found-page-light.svg',
   notFoundPageDark: './assets/images/not-found-page-dark-2.svg',
 }
