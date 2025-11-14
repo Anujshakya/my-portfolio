@@ -1,6 +1,7 @@
 import {Routes} from '@angular/router';
 import {DefaultLayoutComponent} from './layouts/default-layout/default-layout.component';
 import {BlogComponent, HomeComponent, ProjectComponent, WorkComponent} from './components';
+import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
   {
@@ -31,7 +32,12 @@ export const routes: Routes = [
         path: 'projects',
         title: 'Projects',
         component: ProjectComponent,
+      },
+      {
+        path: '**',
+        component: NotFoundComponent,
+        title: 'Not Found',
       }
-    ]
+    ],
   }
 ];
