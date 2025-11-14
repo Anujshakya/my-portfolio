@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {APP_CONSTANTS} from '../../constants';
 import {NgClass} from '@angular/common';
+import {ThemeService} from '../../../services/common/theme.service';
 
 @Component({
   selector: 'app-theme-toggler',
@@ -11,26 +11,20 @@ import {NgClass} from '@angular/common';
   styleUrl: './theme-toggler.component.css',
 })
 export class ThemeTogglerComponent implements OnInit {
-  currentTheme: 'light' | 'dark' = 'light';
-
-  CURRENT_THEME = APP_CONSTANTS.localStorageKey.currentTheme;
+  constructor(
+    private _themeService: ThemeService,
+  ) {
+  }
 
   ngOnInit() {
-    const savedTheme = localStorage.getItem(this.CURRENT_THEME) as 'light' | 'dark';
-    this.currentTheme = savedTheme || 'light';
-    document.documentElement.setAttribute('data-theme', this.currentTheme);
+    this._themeService.loadTheme();
   }
 
   toggleTheme(): void {
-    this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', this.currentTheme);
+    this._themeService.toggleTheme();
+  }
 
-    if (this.currentTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-
-    localStorage.setItem(this.CURRENT_THEME, this.currentTheme);
+  get currentTheme(): string {
+    return this._themeService.getCurrentTheme();
   }
 }
