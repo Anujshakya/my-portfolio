@@ -11,6 +11,8 @@ export class ThemeService {
   private currentTheme: Theme = 'light';
 
   loadTheme() {
+    document.documentElement.classList.add('no-transitions');
+
     const savedTheme = localStorage.getItem(this.CURRENT_THEME_KEY);
 
     if (savedTheme) {
@@ -20,6 +22,11 @@ export class ThemeService {
     }
 
     this.applyTheme(this.currentTheme);
+
+    // Re-enable transitions after a brief delay
+    setTimeout(() => {
+      document.documentElement.classList.remove('no-transitions');
+    }, 100);
   }
 
   private validateTheme(theme: string): Theme {
