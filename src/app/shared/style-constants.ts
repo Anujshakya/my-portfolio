@@ -1,6 +1,6 @@
 export const STYLE_CONSTANTS = {
   btnGlassTheme: [
-    'group relative px-4 py-2 text-xs font-semibold rounded-lg',
+    'group relative px-6 py-2 text-xs font-semibold rounded-lg',
     'bg-blue-500/10 dark:bg-purple-500/10',
     'border border-blue-300/20 dark:border-purple-300/20',
     'backdrop-blur-md',
