@@ -10,6 +10,7 @@
   box-shadow:
     0 8px 32px 0 rgba(31, 38, 135, 0.37),
     inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Background subtle zoom on hover */
@@ -18,21 +19,25 @@
 }
 
 /* Image stays at bottom while zooming */
-:host:hover img {
-  transform: translateX(-50%) scale(1.25);
+img {
   transform-origin: center bottom;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+  filter 0.3s ease;
+}
+
+:host:hover img {
+  transform: translateX(-50%) scale(1.15);
 }
 
 /* Additional glow effect on hover - theme aware */
+:host {
+  transition: filter 0.3s ease;
+}
+
 :host:hover {
   filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
 }
 
 :host-context(.dark):hover {
   filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.5));
-}
-
-/* Ensure image always stays at bottom */
-img {
-  transform-origin: center bottom;
 }
