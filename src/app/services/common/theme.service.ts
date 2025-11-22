@@ -41,18 +41,29 @@ export class ThemeService {
   }
 
   applyTheme(theme: Theme) {
-    const validatedTheme = this.validateTheme(theme);
+    const body = document.body;
+    body.classList.add('theme-changing');
 
-    document.documentElement.setAttribute('data-theme', validatedTheme);
-    this.currentTheme = validatedTheme;
+    setTimeout(() => {
+      const validatedTheme = this.validateTheme(theme);
+      document.documentElement.setAttribute('data-theme', validatedTheme);
+      this.currentTheme = validatedTheme;
 
-    if (this.currentTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+      if (this.currentTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
 
-    localStorage.setItem(this.CURRENT_THEME_KEY, validatedTheme);
+      localStorage.setItem(this.CURRENT_THEME_KEY, validatedTheme);
+
+      body.classList.remove('theme-changing');
+      body.classList.add('theme-changed');
+
+      setTimeout(() => {
+        body.classList.remove('theme-changed');
+      }, 250);
+    }, 100)
   }
 
   toggleTheme(): void {
