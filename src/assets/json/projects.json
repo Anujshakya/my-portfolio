@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "title": "Hand Drawn to Digital Circuit",
+    "description": "Detects circuit components, nodes, and connections to automatically generate a netlist, which can be used to simulate the circuit and produce its schematic diagram.",
+    "imageUrl": "./assets/images/projects/h2dc.png",
+    "repoLink": "https://github.com/H2DC/h2dc-w-cnn",
+    "webLink": "",
+    "keySkills": [
+      {
+        "name": "Python",
+        "url": "https://www.python.org/"
+      },{
+        "name": "CNN",
+        "url": ""
+      },{
+        "name": "YOLO",
+        "url": "https://docs.ultralytics.com/"
+      }
+    ],
+    "status": "Completed"
+  },
+  {
+    "id": 2,
+    "title": "Parking Management System",
+    "description": "Detects license plates at entry and exit, matches the records, and calculates parking fees based on duration.",
+    "imageUrl": "./assets/images/projects/parking-management-system.png",
+    "repoLink": "https://github.com/Jasmineb1/Parking-management-using-ANPR-CNN-for-nepali-number-plates",
+    "webLink": "",
+    "keySkills": [
+      {
+        "name": "Python",
+        "url": "https://www.python.org/"
+      },{
+        "name": "CNN",
+        "url": ""
+      },{
+        "name": "YOLO",
+        "url": "https://docs.ultralytics.com/"
+      }
+    ],
+    "status": "Completed"
+  },
+  {
+    "id": 3,
+    "title": "Pong in C",
+    "description": "Developed using the fundamental concepts of C programming along with a graphics library to implement rendering, game logic, and user interaction",
+    "imageUrl": "./assets/images/projects/pong.png",
+    "repoLink": "https://github.com/Anujshakya/Pong-in-C",
+    "webLink": "",
+    "keySkills": [
+      {
+        "name": "C",
+        "url": "https://www.python.org/"
+      }
+    ],
+    "status": "Completed"
+  }
+]

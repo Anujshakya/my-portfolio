@@ -43,4 +43,4 @@ Thumbs.db
 
 # Config settings
 /src/app/shared/spotify-constants.ts
-/src/assets/json/*
+#/src/assets/json/*

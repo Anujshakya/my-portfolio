@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "companyName": "Azrach IT",
+    "location": "Lalitpur, Nepal",
+    "role": "Software Engineer",
+    "startDate": "2024-06-01",
+    "endDate": "",
+    "keySkills": [
+      {
+        "name": "Python",
+        "url": "https://www.python.org/"
+      },
+      {
+        "name": "Flask",
+        "url": "https://flask.palletsprojects.com/en/stable/"
+      },
+      {
+        "name": "Angular",
+        "url": "https://angular.dev/"
+      },
+      {
+        "name": "PostgreSQL",
+        "url": "https://www.postgresql.org/"
+      }
+    ],
+    "summary": [
+      "Major role as a back-end developer with contributions in front-end.",
+      "Analysis and design of the database structure.",
+      "Familiarity working with version control like git.",
+      "Regular involvement in project planning and analysis."
+    ],
+    "url": "https://azrachit.com/",
+    "logoUrl": "./assets/images/azrachit.png"
+  },
+  {
+    "id": 2,
+    "companyName": "Nepal Innovation Center",
+    "location": "Kirtipur, Nepal",
+    "role": "Intern",
+    "startDate": "2023-11-01",
+    "endDate": "2024-02-01",
+    "keySkills": [
+      {
+        "name": "ReactJS",
+        "url": "https://react.dev/"
+      }
+    ],
+    "summary": [
+      "Learned the basic concepts of react and worked on website development while improving teamwork and communication skills.",
+      "Adaptation to different libraries while working with front-end development"
+    ],
+    "url": "https://nicnepal.org/",
+    "logoUrl": "./assets/images/nic.png"
+  }
+]
