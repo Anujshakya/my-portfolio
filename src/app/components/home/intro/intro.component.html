@@ -6,12 +6,11 @@
 <div class="mt-8">
   <h1
     class="text-3xl font-bold opacity-80">
-    Hi, I'm Anuj —
-    <span class="text-gray-500 dark:text-gray-400">Smth Kooooooooooool.</span>
+    Hi, I'm {{ aboutMeData.first_name }} —
+    <span class="text-gray-500 dark:text-gray-400">{{ aboutMeData.quote }}.</span>
   </h1>
   <div class="mt-4 w-3/4 opacity-90 text-justify gap-y-2 text-base md:text-lg text-slate-500 dark:text-slate-400">
-    I’m a Full-Stack Software Engineer from Nepal, passionate about creating dynamic and efficient web applications that
-    deliver great user experiences.
+    {{  aboutMeData.description }}
   </div>
 </div>
 
