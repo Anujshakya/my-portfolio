@@ -18,11 +18,11 @@ export const APP_CONSTANTS = {
       url: 'mailto:anujshk2001@gmail.com',
       lucidIcon: 'mail',
     },
-    {
-      name: 'instagram',
-      url: 'https://www.instagram.com/anuj_shakya_',
-      lucidIcon: 'instagram',
-    },
+    // {
+    //   name: 'instagram',
+    //   url: 'https://www.instagram.com/anuj_shakya_',
+    //   lucidIcon: 'instagram',
+    // },
   ],
   projectStatus: {
     COMPLETED: 'Completed',

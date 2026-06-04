@@ -1,28 +1,38 @@
 <div class="relative">
-  <div class="navbar glassy-navbar absolute top-0 left-0 w-full z-50">
+  <div class="navbar glassy-navbar rounded-lg absolute top-0 left-0 w-full z-50">
     <div class="navbar-start">
-      <ul class="menu menu-horizontal flex flex-nowrap items-baseline">
+      <ul class="menu menu-horizontal flex flex-nowrap items-baseline gap-2">
         <li>
-          <div [routerLink]="['/home']">
+          <div
+            [routerLink]="['/home']"
+            [routerLinkActive]="navLinkActiveClass"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="rounded-lg p-2 transition-[background-color,box-shadow] duration-200 hover:bg-base-300 cursor-pointer">
             <app-profile-image>
             </app-profile-image>
           </div>
         </li>
         <li>
-          <a [routerLink]="'work'">
+          <a
+            [routerLink]="'work'"
+            [routerLinkActive]="navLinkActiveClass"
+            class="rounded-lg px-3 py-2 transition-[background-color,box-shadow] duration-200 hover:bg-base-300">
             Work
           </a>
         </li>
         <li>
-          <a [routerLink]="'projects'">
+          <a
+            [routerLink]="'projects'"
+            [routerLinkActive]="navLinkActiveClass"
+            class="rounded-lg px-3 py-2 transition-[background-color,box-shadow] duration-200 hover:bg-base-300">
             Projects
           </a>
         </li>
-        <li>
-          <a [routerLink]="'blogs'">
-            Blogs
-          </a>
-        </li>
+        <!--        <li>-->
+        <!--          <a [routerLink]="'blogs'">-->
+        <!--            Blogs-->
+        <!--          </a>-->
+        <!--        </li>-->
       </ul>
     </div>
     <div class="navbar-end">

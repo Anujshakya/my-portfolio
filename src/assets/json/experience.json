@@ -22,13 +22,21 @@
       {
         "name": "PostgreSQL",
         "url": "https://www.postgresql.org/"
+      },
+      {
+        "name": "Docker",
+        "url": "https://docs.docker.com/"
       }
     ],
     "summary": [
-      "Major role as a back-end developer with contributions in front-end.",
-      "Analysis and design of the database structure.",
-      "Familiarity working with version control like git.",
-      "Regular involvement in project planning and analysis."
+      "Designed and developed scalable features for QuoteShop, an Australian quotation management SaaS platform.",
+      "Developed REST API endpoints using Python and Flask, improving average response reliability and reducing client-reported integration errors.",
+      "Built modular, reusable frontend components in Angular and TypeScript, improving component isolation and reducing UI-related bug reports.",
+      "Contributed to PostgreSQL schema design and query optimisation, improving dashboard load times for data-heavy views.",
+      "Integrated third-party APIs (payment gateways and hardware store platforms) to automate transactions, improve supply chain connectivity, and enhance overall system efficiency",
+      "Conducted peer code reviews and enforced clean-code standards across the team, reducing post-merge defects in reviewed PRs.",
+      "Collaborated with the architecture team on system design decisions affecting platform scalability and maintainability.",
+      "Mentored an intern in backend development, focusing on API design, clean code architecture, and software design principles."
     ],
     "url": "https://azrachit.com/",
     "logoUrl": "./assets/images/azrachit.png"
@@ -47,8 +55,8 @@
       }
     ],
     "summary": [
-      "Learned the basic concepts of react and worked on website development while improving teamwork and communication skills.",
-      "Adaptation to different libraries while working with front-end development"
+      "Contributed React.js frontend components across 3 assigned feature modules, meeting all sprint deadlines.",
+      "Collaborated in an Agile team environment, participating in daily stand-ups, sprint planning, and retrospectives."
     ],
     "url": "https://nicnepal.org/",
     "logoUrl": "./assets/images/nic.png"

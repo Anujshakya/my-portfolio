@@ -23,11 +23,11 @@ export const routes: Routes = [
         title: 'Work',
         component: WorkComponent,
       },
-      {
-        path: 'blogs',
-        title: 'Blogs',
-        component: BlogComponent,
-      },
+      // {
+      //   path: 'blogs',
+      //   title: 'Blogs',
+      //   component: BlogComponent,
+      // },
       {
         path: 'projects',
         title: 'Projects',

@@ -2,7 +2,7 @@
   "first_name": "Anuj",
   "last_name": "Shakya",
   "image_url": "./assets/images/101pp.png",
-  "description": "I’m a Full-Stack Software Engineer from Nepal, delivering complete web solutions — from system design to interactive user experiences.",
+  "description": "I’m a Full-Stack Software Engineer with 2+ years of experience, currently based in Australia, delivering complete web solutions — from system design to interactive user experiences.",
   "quote": "Software Engineer",
   "skills": [
     {
@@ -28,6 +28,10 @@
     {
       "name": "PostgreSQL",
       "url": "https://www.postgresql.org/"
+    },
+    {
+      "name": "Docker",
+      "url": "https://docs.docker.com/"
     }
   ]
 }

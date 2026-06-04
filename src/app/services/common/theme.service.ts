@@ -3,6 +3,8 @@ import {APP_CONSTANTS} from '../../shared';
 
 type Theme = 'light' | 'dark';
 
+const THEME_TRANSITION_MS = 550;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,12 +23,11 @@ export class ThemeService {
       this.currentTheme = this.getSystemTheme();
     }
 
-    this.applyTheme(this.currentTheme);
+    this.applyTheme(this.currentTheme, false);
 
-    // Re-enable transitions after a brief delay
     setTimeout(() => {
       document.documentElement.classList.remove('no-transitions');
-    }, 100);
+    }, 50);
   }
 
   private validateTheme(theme: string): Theme {
@@ -40,30 +41,35 @@ export class ThemeService {
     return 'light';
   }
 
-  applyTheme(theme: Theme) {
-    const body = document.body;
-    body.classList.add('theme-changing');
+  applyTheme(theme: Theme, animate = true) {
+    const validatedTheme = this.validateTheme(theme);
+    const html = document.documentElement;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    setTimeout(() => {
-      const validatedTheme = this.validateTheme(theme);
-      document.documentElement.setAttribute('data-theme', validatedTheme);
+    const updateDom = () => {
+      html.setAttribute('data-theme', validatedTheme);
       this.currentTheme = validatedTheme;
 
-      if (this.currentTheme === 'dark') {
-        document.documentElement.classList.add('dark');
+      if (validatedTheme === 'dark') {
+        html.classList.add('dark');
       } else {
-        document.documentElement.classList.remove('dark');
+        html.classList.remove('dark');
       }
 
       localStorage.setItem(this.CURRENT_THEME_KEY, validatedTheme);
+    };
 
-      body.classList.remove('theme-changing');
-      body.classList.add('theme-changed');
+    if (!animate || prefersReducedMotion || html.classList.contains('no-transitions')) {
+      updateDom();
+      return;
+    }
 
-      setTimeout(() => {
-        body.classList.remove('theme-changed');
-      }, 250);
-    }, 100)
+    html.classList.add('theme-switching');
+    updateDom();
+
+    window.setTimeout(() => {
+      html.classList.remove('theme-switching');
+    }, THEME_TRANSITION_MS);
   }
 
   toggleTheme(): void {

@@ -4,12 +4,22 @@
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 0.75rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  /* Opaque band above navbar — masks scrolling content; uses theme token so no extra box */
+  box-shadow:
+    0 -1rem 0 0 var(--color-base-100),
+    0 4px 20px rgba(0, 0, 0, 0.15);
   transition: background 0.3s ease, border 0.3s ease;
 }
 
 .dark .glassy-navbar {
   background: rgba(17, 25, 40, 0.35); /* darker translucent */
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    0 -1rem 0 0 var(--color-base-100),
+    0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Follow html @property color animation; avoid a second background/box-shadow fade */
+html.theme-switching .glassy-navbar {
+  transition: background 0.3s ease, border 0.3s ease;
 }

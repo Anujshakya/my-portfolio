@@ -10,15 +10,170 @@
   }
 }
 
+/* DaisyUI theme tokens — enables smooth interpolation on theme change */
+@property --color-base-100 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(100% 0 0);
+}
+@property --color-base-200 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(98% 0 0);
+}
+@property --color-base-300 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(95% 0 0);
+}
+@property --color-base-content {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(21% 0.006 285.885);
+}
+@property --color-primary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(45% 0.24 277.023);
+}
+@property --color-primary-content {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(93% 0.034 272.788);
+}
+@property --color-secondary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(65% 0.241 354.308);
+}
+@property --color-secondary-content {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(94% 0.028 342.258);
+}
+@property --color-accent {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(77% 0.152 181.912);
+}
+@property --color-accent-content {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(38% 0.063 188.416);
+}
+@property --color-neutral {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(14% 0.005 285.823);
+}
+@property --color-neutral-content {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(92% 0.004 286.32);
+}
+@property --color-info {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(74% 0.16 232.661);
+}
+@property --color-info-content {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(29% 0.066 243.157);
+}
+@property --color-success {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(76% 0.177 163.223);
+}
+@property --color-success-content {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(37% 0.077 168.94);
+}
+@property --color-warning {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(82% 0.189 84.429);
+}
+@property --color-warning-content {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(41% 0.112 45.904);
+}
+@property --color-error {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(71% 0.194 13.428);
+}
+@property --color-error-content {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: oklch(27% 0.105 12.094);
+}
+
+:root {
+  --theme-transition-duration: 0.55s;
+  --theme-transition-easing: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
 html {
-  transition: background-color 0.4s ease, color 0.4s ease, filter 0.3s ease;
   font-family: 'JetBrains Mono', monospace;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
+html:not(.no-transitions) {
+  transition:
+    --color-base-100 var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-base-200 var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-base-300 var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-base-content var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-primary var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-primary-content var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-secondary var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-secondary-content var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-accent var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-accent-content var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-neutral var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-neutral-content var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-info var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-info-content var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-success var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-success-content var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-warning var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-warning-content var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-error var(--theme-transition-duration) var(--theme-transition-easing),
+    --color-error-content var(--theme-transition-duration) var(--theme-transition-easing),
+    filter var(--theme-transition-duration) ease-out,
+    background-color var(--theme-transition-duration) var(--theme-transition-easing),
+    color var(--theme-transition-duration) var(--theme-transition-easing);
+}
+
 html[data-theme='dark'] {
   filter: brightness(0.95);
+}
+
+/* Tailwind `dark:` utilities and fixed palette classes during a theme toggle */
+html.theme-switching:not(.no-transitions) *,
+html.theme-switching:not(.no-transitions) *::before,
+html.theme-switching:not(.no-transitions) *::after {
+  transition-property: background-color, color, border-color, outline-color, fill, stroke,
+    box-shadow, text-decoration-color;
+  transition-duration: var(--theme-transition-duration);
+  transition-timing-function: var(--theme-transition-easing);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:not(.no-transitions) {
+    transition: none;
+  }
+
+  html.theme-switching *,
+  html.theme-switching *::before,
+  html.theme-switching *::after {
+    transition: none !important;
+  }
 }
 
 .fade-page,
@@ -58,20 +213,3 @@ html[data-theme='dark'] {
   }
 }
 
-.theme-fade {
-  transition: background-color 0.4s ease,
-  color 0.4s ease,
-  border-color 0.4s ease,
-  fill 0.4s ease,
-  stroke 0.4s ease;
-}
-
-.theme-fade.theme-changing {
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.theme-fade.theme-changed {
-  opacity: 1;
-  transition: opacity 0.25s ease;
-}
