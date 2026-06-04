@@ -1,43 +1,41 @@
 import {Routes} from '@angular/router';
 import {DefaultLayoutComponent} from './layouts/default-layout/default-layout.component';
-import {BlogComponent, HomeComponent, ProjectComponent, WorkComponent} from './components';
+import {HomeComponent, ProjectComponent, WorkComponent} from './components';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
+import {APP_ROUTE_PATHS} from './app-route-paths';
+
+const layoutChildren: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: APP_ROUTE_PATHS.home,
+  },
+  {
+    path: APP_ROUTE_PATHS.home,
+    title: 'Home',
+    component: HomeComponent,
+  },
+  {
+    path: APP_ROUTE_PATHS.work,
+    title: 'Work',
+    component: WorkComponent,
+  },
+  {
+    path: APP_ROUTE_PATHS.projects,
+    title: 'Projects',
+    component: ProjectComponent,
+  },
+  {
+    path: '**',
+    title: 'Not Found',
+    component: NotFoundComponent,
+  },
+];
 
 export const routes: Routes = [
   {
     path: '',
     component: DefaultLayoutComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full',
-      },
-      {
-        path: 'home',
-        title: 'Home',
-        component: HomeComponent,
-      },
-      {
-        path: 'work',
-        title: 'Work',
-        component: WorkComponent,
-      },
-      // {
-      //   path: 'blogs',
-      //   title: 'Blogs',
-      //   component: BlogComponent,
-      // },
-      {
-        path: 'projects',
-        title: 'Projects',
-        component: ProjectComponent,
-      },
-      {
-        path: '**',
-        component: NotFoundComponent,
-        title: 'Not Found',
-      }
-    ],
-  }
+    children: layoutChildren,
+  },
 ];

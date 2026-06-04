@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ThemeTogglerComponent, ProfileImageComponent} from '../../shared';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {APP_ROUTE_PATHS} from '../../app-route-paths';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,7 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+  protected readonly APP_ROUTE_PATHS = APP_ROUTE_PATHS;
   protected readonly navLinkActiveClass =
     '!shadow-inner !bg-base-200 dark:!bg-base-100 active:!shadow-[inset_0_3px_6px_rgba(0,0,0,0.3)]';
 }

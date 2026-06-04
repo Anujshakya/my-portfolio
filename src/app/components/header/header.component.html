@@ -4,7 +4,7 @@
       <ul class="menu menu-horizontal flex flex-nowrap items-baseline gap-2">
         <li>
           <div
-            [routerLink]="['/home']"
+            [routerLink]="['/', APP_ROUTE_PATHS.home]"
             [routerLinkActive]="navLinkActiveClass"
             [routerLinkActiveOptions]="{ exact: true }"
             class="rounded-lg p-2 transition-[background-color,box-shadow] duration-200 hover:bg-base-300 cursor-pointer">
@@ -14,7 +14,7 @@
         </li>
         <li>
           <a
-            [routerLink]="'work'"
+            [routerLink]="['/', APP_ROUTE_PATHS.work]"
             [routerLinkActive]="navLinkActiveClass"
             class="rounded-lg px-3 py-2 transition-[background-color,box-shadow] duration-200 hover:bg-base-300">
             Work
@@ -22,7 +22,7 @@
         </li>
         <li>
           <a
-            [routerLink]="'projects'"
+            [routerLink]="['/', APP_ROUTE_PATHS.projects]"
             [routerLinkActive]="navLinkActiveClass"
             class="rounded-lg px-3 py-2 transition-[background-color,box-shadow] duration-200 hover:bg-base-300">
             Projects

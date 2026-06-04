@@ -6,7 +6,7 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZoneChangeDetection
 } from '@angular/core';
-import {provideRouter} from '@angular/router';
+import {provideRouter, withInMemoryScrolling} from '@angular/router';
 
 import {routes} from './app.routes';
 import {AuthInterceptorService, SERVICES} from './services';
@@ -23,7 +23,10 @@ export const appConfig: ApplicationConfig = {
       const config = inject(AppUrlConfig);
       return config.load();
     }),
-    provideRouter(routes),
+    provideRouter(
+      routes,
+      withInMemoryScrolling({scrollPositionRestoration: 'enabled'}),
+    ),
     SERVICES,
     {
       provide: HTTP_INTERCEPTORS,

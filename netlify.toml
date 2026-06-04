@@ -1,3 +1,9 @@
 [build]
   command = "ng build"
   publish = "dist/angular-v20-daisyui/browser"
+
+# SPA fallback — serve index.html for all routes so /home, /work, etc. work on refresh
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
